@@ -23,11 +23,11 @@ export default function Home() {
   useEffect(() => {
     setMounted(true);
     try {
-      const savedDraft = localStorage.getItem("johny_cv_draft");
-      const savedJd = localStorage.getItem("johny_jd");
-      const savedResult = localStorage.getItem("johny_result");
-      const masterCv = localStorage.getItem("johny_master_cv");
-      const savedHistory = localStorage.getItem("johny_history_list");
+      const savedDraft = localStorage.getItem("rohan_cv_draft");
+      const savedJd = localStorage.getItem("rohan_jd");
+      const savedResult = localStorage.getItem("rohan_result");
+      const masterCv = localStorage.getItem("rohan_master_cv");
+      const savedHistory = localStorage.getItem("rohan_history_list");
 
       if (savedDraft) setCvText(savedDraft);
       else if (masterCv) setCvText(masterCv);
@@ -43,8 +43,8 @@ export default function Home() {
   useEffect(() => {
     if (isLoaded) {
       try {
-        localStorage.setItem("johny_cv_draft", cvText);
-        localStorage.setItem("johny_jd", jobDescription);
+        localStorage.setItem("rohan_cv_draft", cvText);
+        localStorage.setItem("rohan_jd", jobDescription);
       } catch (e) {
         console.warn("Storage full");
       }
@@ -53,7 +53,7 @@ export default function Home() {
 
   const saveAsMaster = () => {
     try {
-      localStorage.setItem("johny_master_cv", cvText);
+      localStorage.setItem("rohan_master_cv", cvText);
       showStatus("✓ Saved as your default CV!");
     } catch (e) {
       alert("Storage Full!");
@@ -61,7 +61,7 @@ export default function Home() {
   };
 
   const resetToMaster = () => {
-    const master = localStorage.getItem("johny_master_cv");
+    const master = localStorage.getItem("rohan_master_cv");
     if (master) {
       if (confirm("Discard changes and reload your default CV?")) {
         setCvText(master);
@@ -93,7 +93,7 @@ export default function Home() {
     const updatedHistory = [newItem, ...history].slice(0, 10);
     setHistory(updatedHistory);
     try {
-      localStorage.setItem("johny_history_list", JSON.stringify(updatedHistory));
+      localStorage.setItem("rohan_history_list", JSON.stringify(updatedHistory));
     } catch (e) {
       console.warn("History full");
     }
@@ -109,7 +109,7 @@ export default function Home() {
     e.stopPropagation();
     const updated = history.filter((h) => h.id !== id);
     setHistory(updated);
-    localStorage.setItem("johny_history_list", JSON.stringify(updated));
+    localStorage.setItem("rohan_history_list", JSON.stringify(updated));
   };
 
   const handleSubmit = async () => {
@@ -135,7 +135,7 @@ export default function Home() {
         alert("Error: " + data.error);
       } else {
         setResult(data.result);
-        localStorage.setItem("johny_result", data.result);
+        localStorage.setItem("rohan_result", data.result);
         addToHistory(data.result);
       }
     } catch (error) {
