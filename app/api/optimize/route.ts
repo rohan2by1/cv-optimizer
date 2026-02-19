@@ -33,6 +33,7 @@ Your task is to **tune** the CV to match the job description (JD) while preservi
 ## 🛠️ Optimization Steps
 1. **Summary Alignment (Tone):**
    - **Tone the summary accoring to JD** Not completely just ats friendly.
+   
 2. **Experience Alignment (SUBTLE):**
    - **Do NOT rewrite completely.** Keep the core meaning and structure of the user's original bullet points.
    - **Synonym Swap:** Only change specific verbs or nouns to match the JD's vocabulary (e.g., if user wrote "Managed team," and JD says "Led Squads," change it to "Led Squads").
@@ -85,5 +86,6 @@ export async function POST(request: Request) {
     );
   }
 }
+
 
 
