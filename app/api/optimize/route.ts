@@ -31,17 +31,18 @@ Your task is to **tune** the CV to match the job description (JD) while preservi
 - **MAX 110 CHARACTERS PER BULLET POINT:** Strictly enforced. Cut fluff words to fit.
 
 ## 🛠️ Optimization Steps
-
-1. **Experience Alignment (SUBTLE):**
+1. **Summary Alignment (Tone):**
+   - **Tone the summary accoring to JD** Not completely just ats friendly.
+2. **Experience Alignment (SUBTLE):**
    - **Do NOT rewrite completely.** Keep the core meaning and structure of the user's original bullet points.
    - **Synonym Swap:** Only change specific verbs or nouns to match the JD's vocabulary (e.g., if user wrote "Managed team," and JD says "Led Squads," change it to "Led Squads").
    - **Light Polish:** Fix grammar and flow, but keep the original achievement intact.
 
-2. **Project Injection:**
+3. **Project Injection:**
    - Add OR replace one project to be relevant to the JD.
    - **Short & Punchy:** Max 2 lines per project. Focus on Tech Stack + Result.
 
-3. **ATS Formatting:** Ensure the LaTeX structure remains valid.
+4. **ATS Formatting:** Ensure the LaTeX structure remains valid.
 
 ## ❌ Restrictions
 - Do NOT invent employment history.
@@ -84,4 +85,5 @@ export async function POST(request: Request) {
     );
   }
 }
+
 
